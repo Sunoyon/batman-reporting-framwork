@@ -1,0 +1,5 @@
+report-location:
+    - reports/v1/examples/example1.yaml
+    - reports/v1/examples/example2.yaml
+    - reports/v1/examples/example3.yaml
+    - reports/v1/examples/example4.yaml

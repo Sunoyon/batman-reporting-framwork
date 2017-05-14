@@ -1,0 +1,38 @@
+-- dbUrl: jdbc:postgresql://localhost:5432/sale4
+-- db: sale4
+-- user: sunoyon
+-- password: 
+
+CREATE DATABASE sale4;
+
+-- psql -d sale4
+CREATE TABLE ITEM (
+     item_id SERIAL,
+     name VARCHAR(50),
+     price INT NOT NULL,
+     PRIMARY KEY (item_id)
+);
+
+CREATE TABLE SALE (
+	sale_id SERIAL,
+	sale_date DATE NOT NULL,
+	market VARCHAR(30) NOT NULL,
+	item_id INT REFERENCES ITEM(item_id) ON DELETE CASCADE,
+	PRIMARY KEY (sale_id)
+);
+
+INSERT INTO ITEM VALUES(1, 'Television', 500);
+INSERT INTO ITEM VALUES(2, 'Radio', 300);
+INSERT INTO ITEM VALUES(3, 'Computer', 600);
+
+INSERT INTO SALE VALUES(1, '2017-05-01', 'BD', 1);
+INSERT INTO SALE VALUES(2, '2017-05-01', 'SE', 2);
+INSERT INTO SALE VALUES(3, '2017-05-01', 'DK', 3);
+
+INSERT INTO SALE VALUES(4, '2017-05-02', 'BD', 3);
+INSERT INTO SALE VALUES(5, '2017-05-02', 'SE', 3);
+INSERT INTO SALE VALUES(6, '2017-05-02', 'SE', 3);
+
+INSERT INTO SALE VALUES(7, '2017-05-03', 'SE', 1);
+INSERT INTO SALE VALUES(8, '2017-05-03', 'DK', 2);
+INSERT INTO SALE VALUES(9, '2017-05-03', 'BD', 2);

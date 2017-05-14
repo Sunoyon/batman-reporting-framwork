@@ -1,0 +1,18 @@
+sql: >
+      SELECT [s.sale_date, s.market, i.name %groupFields],
+      SUM(i.price) as totalSale  
+      FROM SALE s 
+      JOIN ITEM i USING (item_id)
+      WHERE {date s.sale_date BETWEEN %startDate AND %endDate}
+      AND {market s.market IN %markets}
+      AND {item i.name = %itemName}
+      GROUP BY [s.sale_date, s.market, i.name %groupFields]
+      
+data-source: sale3ReportDs
+
+group-translator-map: >
+                       {
+                         "s.sale_date": "sale_date",
+                         "s.market": "market", 
+                         "i.name": "itemName"
+                       }

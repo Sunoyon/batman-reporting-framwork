@@ -1,0 +1,5 @@
+sql: >
+      SELECT i.name, i.price
+      FROM ITEM i
+
+data-source: sale2ReportDs
