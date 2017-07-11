@@ -1,30 +1,7 @@
 data-sources:
-      - name: sale3ReportDs
-        db-url: jdbc:postgresql://localhost:5432/sale3
-        db-user: sunoyon
-        db-password: 
-        db-max-connection: 10
-        db-type: postgresql
-        
-      - name: sale4ReportDs
-        db-url: jdbc:postgresql://localhost:5432/sale4
-        db-user: sunoyon
-        db-password: 
-        db-max-connection: 10
-        db-type: postgresql
-        
-      - name: sale1ReportDs
-        db-url: jdbc:mysql://localhost:3306/sale1?useSSL=false
-        db-user: root
-        db-password: "123"
+      - name: mmDev
+        db-url: jdbc:mysql://**.**.**.**:3306/**
+        db-user: ***
+        db-password: ***
         db-max-connection: 10
         db-type: mysql
-        
-      - name: sale2ReportDs
-        db-url: jdbc:mysql://localhost:3306/sale1?useSSL=false
-        db-user: root
-        db-password: "123"
-        db-max-connection: 10
-        db-type: mysql
-        
-        

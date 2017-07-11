@@ -1,0 +1,6 @@
+sql: >
+      SELECT COUNT(*) as dailySignUpCount
+      FROM mm_user
+      WHERE {date Date(account_creation_date) = %date} 
+      
+data-source: mmDev
